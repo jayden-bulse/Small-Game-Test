@@ -65,6 +65,8 @@ void Pipe::move(float dt)
     BottomPipeCap.move({dx,0});
 }
 
+
+
 std::map<std::string, std::vector<sf::FloatRect>> Pipe::getBounds()
 {
     std::vector<sf::FloatRect> topBounds; 
@@ -86,6 +88,7 @@ PipeController::PipeController(GameSettings s) : settings(s)
     Pipe p(s, frontPipeX);
     pipes.push_back(p);
     generateX = s.windowWidth - s.generateDistance;
+    updateDis = s.updateDis;
 }
 
 void PipeController::restart(){
@@ -115,4 +118,31 @@ void PipeController::updatePipes(float dt)
 const std::vector<Pipe>& PipeController::getDrawPipes() 
 {
     return this->pipes;
+}
+
+void PipeController::updatePipeMoveSpeed()
+{
+    if (curUpdateS >= updateDis)
+    {
+        curUpdateS = 0;
+        fastPipe();
+    }
+}
+
+void PipeController::fastPipe()
+{    
+    settings.pipeMoveSpeed*=1.2;
+    for(Pipe& pipe:this->pipes)
+    {
+        pipe.settings.pipeMoveSpeed = settings.pipeMoveSpeed;
+    }
+}
+
+void PipeController::addCurUpdateS()
+{
+    this->curUpdateS++;
+}
+
+int PipeController::getCurUpdateS(){
+    return this->curUpdateS;
 }

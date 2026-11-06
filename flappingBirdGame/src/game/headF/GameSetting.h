@@ -39,6 +39,7 @@ struct GameSettings
     float pipeMoveSpeed = -350.f;
     float generateDistance = windowWidth*0.7;
     float PipeCapWidth = pipeWidth*1.1;
+    int updateDis = 10;
 
     //场景设置
     float sceneMoveSpeed = pipeMoveSpeed*0.25;

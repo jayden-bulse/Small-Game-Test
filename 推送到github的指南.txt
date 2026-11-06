@@ -1,0 +1,8 @@
+1.被推送的文件夹要有.git文件
+创建.git文件命令（会在当前打开的文件夹里创建一个.git文件）：git init
+
+2.被推送的文件夹要连接远程仓库
+查看当前连接的远程仓库命令:git -remote -v
+新建一个对远程仓库的连接命令： git remote add origin 新的仓库地址.git
+修改远程仓库地址命令:git remote set-url origin https://github.com/新用户名/新仓库.git
+

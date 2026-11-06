@@ -40,11 +40,11 @@ actionBtn.setOrigin({ab.position.x + ab.size.x / 2.f,     // ★ 居中原点
                      ab.position.y + ab.size.y / 2.f});
 actionBtn.setPosition({s.windowWidth / 2.f, s.windowHeight * 0.55f});   // ★ 屏幕中下方
 
-    setText(deadTip,60,"You Dead",0.5,0.48);
+    setText(deadTip,60,"You Dead",0.5,0.48-0.1);
     
-    setText(returnActionBtn,30,"Return Play",0.5,0.55);
+    setText(returnActionBtn,30,"Return Play",0.5,0.55-0.1);
     returnActionBtn.setFillColor(sf::Color(0,210,50));
-    setText(exitBtn,30,"Exit",0.5,0.62);
+    setText(exitBtn,30,"Exit",0.5,0.62-0.1);
     exitBtn.setFillColor(sf::Color(0,210,50));
 }
 

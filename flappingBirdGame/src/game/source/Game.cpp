@@ -39,6 +39,10 @@ void Game::restart()
     pipeController.restart();
     this->passPipe = 0;
     ui.restart();
+    
+    pipeController.settings.pipeMoveSpeed = settings.pipeMoveSpeed;
+    scene.settings.pipeMoveSpeed = settings.pipeMoveSpeed;
+
     this->currentState = GameState::Playing;
 }
 
@@ -350,6 +354,13 @@ void Game::Playing(float deltaTime)
     {
         updateUI(this->passPipe);
         playGetScoreSound();
+
+        pipeController.addCurUpdateS();
+        if(pipeController.getCurUpdateS()>=10){
+            pipeController.updatePipeMoveSpeed();
+            scene.settings.pipeMoveSpeed = pipeController.settings.pipeMoveSpeed;
+        }
+        std::cout<<"pipeMoveSpeed:"<<pipeController.settings.pipeMoveSpeed<<std::endl;
     }
     if (isCollide)
     {

@@ -37,9 +37,15 @@ class PipeController{
         std::vector<Pipe> pipes;
         float frontPipeX;
         float generateX;
+        int updateDis;
+        int curUpdateS = 0;
     public:
         PipeController(GameSettings s);
         void updatePipes(float dt);
         const std::vector<Pipe>& getDrawPipes();
         void restart();
+        void fastPipe();
+        void updatePipeMoveSpeed();
+        void addCurUpdateS();
+        int getCurUpdateS();
 };
