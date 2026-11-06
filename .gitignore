@@ -1,0 +1,8 @@
+//flappyingBirdGame
+
+flappyingBirdGame/.vscode
+flappyingBirdGame/build
+flappyingBirdGame/test
+flappyingBirdGame/tools
+flappyingBirdGame/CMakeLists.txt
+flappyingBirdGame/.CMakePresets.json
